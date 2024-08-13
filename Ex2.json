@@ -1,0 +1,28 @@
+{
+    "Aula": [
+    {"nome": "Paradigmas",
+    "sigla": "S201",
+    "professor": {
+        "nome": "Marcelo"
+    },
+    "assunto": "Aspectos preliminares",
+    "aluno": ["João","Maria","Ana","Jéssica"]},
+
+    {"nome": "Banco de dados 2",
+    "sigla": "S202",
+    "professor": {
+        "nome": "Introdução ao MongoDB"
+    },
+    "assunto": "a",
+    "aluno": ["Marcos","Junin","Zé","Carlos"]},
+
+    {"nome": "Probabilidade",
+    "sigla": "M019",
+    "professor": {
+        "nome": "Renan"
+    },
+    "assunto": "Probabilidades isoladas",
+    "aluno": ["Bia","Fabiana","Romero","Juan"]}
+    ]
+
+}
