@@ -1,0 +1,77 @@
+[
+    {
+        "_id": {
+            "$oid": "66c4e69236f29506926c2094"
+        },
+        "id": 7,
+        "num": "007",
+        "name": "Squirtle",
+        "img": "http://www.serebii.net/pokemongo/pokemon/007.png",
+        "type": [
+            "Water"
+        ],
+        "height": "0.51 m",
+        "weight": "9.0 kg",
+        "candy": "Squirtle Candy",
+        "candy_count": 25,
+        "egg": "2 km",
+        "spawn_chance": 0.58,
+        "avg_spawns": 58,
+        "spawn_time": "04:25",
+        "multipliers": [
+            2.1
+        ],
+        "weaknesses": [
+            "Electric",
+            "Grass"
+        ],
+        "next_evolution": [
+            {
+                "num": "008",
+                "name": "Wartortle"
+            },
+            {
+                "num": "009",
+                "name": "Blastoise"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "66c4e69236f29506926c20c9"
+        },
+        "id": 60,
+        "num": "060",
+        "name": "Poliwag",
+        "img": "http://www.serebii.net/pokemongo/pokemon/060.png",
+        "type": [
+            "Water"
+        ],
+        "height": "0.61 m",
+        "weight": "12.4 kg",
+        "candy": "Poliwag Candy",
+        "candy_count": 25,
+        "egg": "5 km",
+        "spawn_chance": 2.19,
+        "avg_spawns": 219,
+        "spawn_time": "03:40",
+        "multipliers": [
+            1.72,
+            1.73
+        ],
+        "weaknesses": [
+            "Electric",
+            "Grass"
+        ],
+        "next_evolution": [
+            {
+                "num": "061",
+                "name": "Poliwhirl"
+            },
+            {
+                "num": "062",
+                "name": "Poliwrath"
+            }
+        ]
+    }
+]
