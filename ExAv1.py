@@ -12,9 +12,9 @@ collection = database.sensores
 
 # Inicializa os documentos dos sensores no MongoDB
 #sensores = [
-#    {"nomeSensor": "Sensor 1", "valorSensor": None, "unidade": "graus C", "sensorAlarmado": False},
-#    {"nomeSensor": "Sensor 2", "valorSensor": None, "unidade": "graus C", "sensorAlarmado": False},
-#    {"nomeSensor": "Sensor 3", "valorSensor": None, "unidade": "graus C", "sensorAlarmado": False},
+#    {"nomeSensor": "Sensor 1", "valorSensor": None, "unidade": "°C", "sensorAlarmado": False},
+#    {"nomeSensor": "Sensor 2", "valorSensor": None, "unidade": "°C", "sensorAlarmado": False},
+#    {"nomeSensor": "Sensor 3", "valorSensor": None, "unidade": "°C", "sensorAlarmado": False},
 #]
 
 # Inserindo documentos na coleção
