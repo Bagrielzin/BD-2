@@ -1,3 +1,5 @@
+from classes import Motorista, Corrida, Passageiro
+
 class SimpleCLI:
     def __init__(self):
         self.commands = {}
@@ -16,7 +18,6 @@ class SimpleCLI:
             else:
                 print("Invalid command. Try again.")
 
-
 class MotoristaCLI(SimpleCLI):
     def __init__(self, motorista_model):
         super().__init__()
@@ -31,21 +32,13 @@ class MotoristaCLI(SimpleCLI):
         while True:
             nome_passageiro = input("Entre com o nome do passageiro: ")
             documento_passageiro = input("Entre com o documento do passageiro: ")
+            passageiro = Passageiro(nome_passageiro, documento_passageiro)
 
             nota_corrida = int(input("Entre com a nota da corrida: "))
             distancia = float(input("Entre com a distância da corrida: "))
             valor = float(input("Entre com o valor da corrida: "))
 
-            corrida = {
-                "nota": nota_corrida,
-                "distancia": distancia,
-                "valor": valor,
-                "passageiro": {
-                    "nome": nome_passageiro,
-                    "documento": documento_passageiro
-                }
-            }
-
+            corrida = Corrida(nota_corrida, distancia, valor, passageiro)
             corridas.append(corrida)
 
             mais_corridas = input("Deseja adicionar mais corridas? (s/n): ")
@@ -53,61 +46,49 @@ class MotoristaCLI(SimpleCLI):
                 break
         
         nota_motorista = int(input("Entre com a nota do motorista: "))
+        motorista = Motorista(nota_motorista, corridas)
 
-        self.motorista_model.create_motorista(nota_motorista, corridas)
+        self.motorista_model.create_motorista(motorista)
 
-        
     def read_motorista(self):
         id = input("Enter the id: ")
         motorista = self.motorista_model.read_motorista_by_id(id)
         
         if motorista:
-            print(f"Nota do motorista: {motorista.get('nota')}\n")
-            
-            print("Corridas:")
-            for corrida in motorista.get('corridas', []):
-                print(f"  Nota da corrida: {corrida['nota']}")
-                print(f"  Distância: {corrida['distancia']}")
-                print(f"  Valor: {corrida['valor']}")
-                
-                passageiro = corrida.get('passageiro', {})
-                print(f"  Nome do passageiro: {passageiro.get('nome')}")
-                print(f"  Documento do passageiro: {passageiro.get('documento')}\n")
-
+            print(f"Nota do motorista: {motorista.nota}\n")
+            for corrida in motorista.corridas:
+                print(f"  Nota da corrida: {corrida.nota}")
+                print(f"  Distância: {corrida.distancia}")
+                print(f"  Valor: {corrida.valor}")
+                print(f"  Nome do passageiro: {corrida.passageiro.nome}")
+                print(f"  Documento do passageiro: {corrida.passageiro.documento}\n")
 
     def update_motorista(self):
         id = input("Enter the id: ")
-        motorista = self.motorista_model.read_motorista_by_id(id)
+        motorista_atual = self.motorista_model.read_motorista_by_id(id)
 
-        if not motorista:
+        if not motorista_atual:
             print("Motorista não encontrado.")
             return
 
         nota_motorista = int(input("Entre com a nova nota do motorista: "))
 
         corridas = []
-        for corrida in motorista.get("corridas", []):
+        for corrida in motorista_atual.corridas:
             print(f"\nAtualizando informações da corrida:")
+            nota_corrida = int(input(f"Nota da corrida ({corrida.nota}): "))
+            distancia = float(input(f"Distância ({corrida.distancia}): "))
+            valor = float(input(f"Valor ({corrida.valor}): "))
             
-            nota_corrida = int(input(f"Nota da corrida ({corrida['nota']}): "))
-            distancia = float(input(f"Distância ({corrida['distancia']}): "))
-            valor = float(input(f"Valor ({corrida['valor']}): "))
-            
-            nome_passageiro = input(f"Nome do passageiro ({corrida['passageiro']['nome']}): ")
-            documento_passageiro = input(f"Documento do passageiro ({corrida['passageiro']['documento']}): ")
+            nome_passageiro = input(f"Nome do passageiro ({corrida.passageiro.nome}): ")
+            documento_passageiro = input(f"Documento do passageiro ({corrida.passageiro.documento}): ")
 
-            corrida_atualizada = {
-                "nota": nota_corrida,
-                "distancia": distancia,
-                "valor": valor,
-                "passageiro": {
-                    "nome": nome_passageiro,
-                    "documento": documento_passageiro
-                }
-            }
+            passageiro_atualizado = Passageiro(nome_passageiro, documento_passageiro)
+            corrida_atualizada = Corrida(nota_corrida, distancia, valor, passageiro_atualizado)
             corridas.append(corrida_atualizada)
 
-        self.motorista_model.update_motorista(id, nota_motorista, corridas)
+        motorista_atualizado = Motorista(nota_motorista, corridas)
+        self.motorista_model.update_motorista(id, motorista_atualizado)
 
     def delete_motorista(self):
         id = input("Enter the id: ")
