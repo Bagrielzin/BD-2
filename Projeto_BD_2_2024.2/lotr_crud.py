@@ -62,7 +62,7 @@ class LortCrud():
         result = self.db.execute_query(query)
         return result[0]["total"]
     
-    def habitante_has_more_traveled(self):  # Função para mostrar o número de habitantes
+    def habitante_has_more_traveled(self):  # Função para mostrar o habitante que mais viajou
         query = """
         MATCH (h:Habitante)-[:PASSOU_POR]->(:Localizacao)
         RETURN h.nome AS nome, COUNT(*) AS total
