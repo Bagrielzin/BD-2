@@ -1,0 +1,49 @@
+2
+Badopi
+Jannuary River
+120000
+
+2
+Dragon Peak
+Shadow Lands
+25
+
+2
+Erebor
+Thorin
+4500
+
+2
+Barad-dûr
+Mordor
+100000
+
+2
+Hobbiton
+Shire
+150
+
+2
+Kaer Trolde
+Skellige
+5000
+
+2
+Minas Tirith
+Gondor
+50000
+
+2
+Edoras
+Rohan
+1000
+
+2
+Osgiliath
+Gondor
+20000
+
+2
+Caelid
+Scarlate
+500
