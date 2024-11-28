@@ -1,6 +1,6 @@
 from database import Database
 from classes import Habitante, Localizacao
-db = Database("bolt://3.227.21.142", "neo4j", "liquor-lifeboats-armful")
+db = Database("bolt://98.80.212.124", "neo4j", "scab-law-push") # esse é o certo
 
 class SimpleCLI:
     def __init__(self):
