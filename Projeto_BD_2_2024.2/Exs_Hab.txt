@@ -54,7 +54,7 @@ Darkin
 
 1
 Gandalf
-Maia
+Maiar
 8000
 1.87
 
@@ -80,7 +80,7 @@ Ent
 Brand
 Balrog
 150
-1.85
+1.84
 
 1
 Legolas
